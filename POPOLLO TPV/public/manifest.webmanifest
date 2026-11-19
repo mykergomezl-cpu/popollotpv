@@ -1,0 +1,9 @@
+{
+  "name": "POPOLLO TPV",
+  "short_name": "POPOLLO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF9EC",
+  "theme_color": "#FFC93C",
+  "icons": [{ "src": "/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

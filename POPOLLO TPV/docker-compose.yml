@@ -1,0 +1,12 @@
+# docker compose up -d   (lee POPOLLO_ADMIN_PIN del archivo .env)
+services:
+  popollo-tpv:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"   # nginx o el proxy de Hostinger delante, con HTTPS
+    environment:
+      POPOLLO_ADMIN_PIN: ${POPOLLO_ADMIN_PIN}
+      SESSION_DAYS: ${SESSION_DAYS:-7}
+    volumes:
+      - ./popollo-data:/data

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POPOLLO · Gestión</title>
+  <meta name="theme-color" content="#FFC93C">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/logo.svg">
+  <link rel="stylesheet" href="/base.css">
+  <style>
+    body { background: var(--yellow); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .wrap { text-align: center; max-width: 760px; width: 100%; }
+    .logo { font-size: 64px; justify-content: center; } .logo img { width: 72px; height: 72px; border-radius: 18px; }
+    p.sub { font-weight: 800; margin: 10px 0 30px; }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    a.card { background: #fff; border-radius: 22px; padding: 30px 22px; text-decoration: none; color: var(--brown); box-shadow: var(--shadow-lg); display: block; transition: transform .1s; }
+    a.card:hover { transform: translateY(-3px); }
+    a.card .i { font-size: 52px; } a.card h2 { margin: 10px 0 6px; font-size: 26px; } a.card p { margin: 0; color: var(--muted); font-weight: 700; }
+    a.card.tpv { border-bottom: 10px solid var(--red); } a.card.adm { border-bottom: 10px solid var(--brown); }
+    @media (max-width: 600px) { .cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo"><img src="/logo.svg" alt="">popolló</div>
+    <p class="sub">Rustidor Global S.L. · Sistema de caja y gestión</p>
+    <div class="cards">
+      <a class="card tpv" href="/tpv"><div class="i">🐔</div><h2>Caja (TPV)</h2><p>Venta en mostrador, para llevar, domicilio y plataformas</p></a>
+      <a class="card adm" href="/admin"><div class="i">📊</div><h2>Administración</h2><p>Escandallos, compras, stock, informes y locales</p></a>
+    </div>
+  </div>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});</script>
+</body>
+</html>

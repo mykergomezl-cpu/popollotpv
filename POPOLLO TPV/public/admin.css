@@ -1,0 +1,56 @@
+body { background: #FAF6EE; }
+.shell { display: grid; grid-template-columns: 232px 1fr; min-height: 100vh; }
+.side { background: var(--brown); color: #F5E9D8; padding: 18px 12px; display: flex; flex-direction: column; gap: 4px; position: sticky; top: 0; height: 100vh; overflow: auto; }
+.side .logo { color: var(--yellow); font-size: 24px; padding: 4px 10px 16px; }
+.side .grp { font-size: 11px; text-transform: uppercase; letter-spacing: .8px; opacity: .55; padding: 14px 12px 4px; font-weight: 800; }
+.side a { color: inherit; text-decoration: none; padding: 9px 12px; border-radius: 10px; font-weight: 700; font-size: 14px; display: flex; gap: 10px; align-items: center; }
+.side a:hover { background: rgba(255, 255, 255, .07); }
+.side a.on { background: var(--yellow); color: var(--brown); }
+.side .foot { margin-top: auto; padding: 12px; font-size: 13px; opacity: .8; }
+.side .foot a { padding: 6px 0; }
+.main { min-width: 0; }
+.bar { position: sticky; top: 0; z-index: 5; background: #FAF6EE; border-bottom: 1px solid var(--line); padding: 14px 26px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.bar h1 { margin: 0; font-size: 22px; margin-right: auto; }
+.bar select, .bar input { border: 2px solid var(--line); border-radius: 10px; padding: 8px 10px; background: #fff; font-weight: 700; color: var(--text); }
+.content { padding: 22px 26px 60px; }
+.card { background: #fff; border-radius: 16px; box-shadow: var(--shadow); padding: 18px; margin-bottom: 18px; }
+.card h3 { margin: 0 0 12px; font-size: 16px; }
+.card .sub { color: var(--muted); font-size: 13px; margin: -8px 0 12px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-bottom: 18px; }
+.kpi { background: #fff; border-radius: 16px; box-shadow: var(--shadow); padding: 16px; border-left: 6px solid var(--c, var(--yellow)); }
+.kpi .l { font-size: 12px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; }
+.kpi .v { font-size: clamp(19px, 1.9vw, 26px); white-space: nowrap; font-weight: 900; margin-top: 4px; letter-spacing: -.5px; }
+.kpi .s { font-size: 12px; color: var(--muted); margin-top: 2px; font-weight: 700; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cols-3-2 { display: grid; grid-template-columns: 3fr 2fr; gap: 18px; }
+.tbl-wrap { overflow: auto; max-height: 70vh; }
+.tools { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
+.tabs { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+.tabs button { border: 0; background: #fff; border-radius: 10px; padding: 9px 14px; font-weight: 800; color: var(--muted); box-shadow: var(--shadow); }
+.tabs button.on { background: var(--brown); color: #fff; }
+.good { color: var(--green-dark); font-weight: 800; } .warn { color: #C77700; font-weight: 800; } .bad { color: #C62828; font-weight: 800; }
+.swatch { display: inline-block; width: 14px; height: 14px; border-radius: 4px; vertical-align: -2px; margin-right: 6px; }
+.recipe td input, .recipe td select { border: 2px solid var(--line); border-radius: 8px; padding: 6px 8px; width: 100%; background: #fff; }
+.recipe td.qty input { width: 90px; }
+.summary-box { background: var(--yellow-soft); border-radius: 12px; padding: 12px 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 12px; }
+.summary-box div span { display: block; font-size: 11px; font-weight: 800; color: var(--muted); text-transform: uppercase; }
+.summary-box div b { font-size: 18px; }
+.chart { width: 100%; height: auto; display: block; }
+.chart text { font-family: var(--font); font-size: 11px; fill: var(--muted); }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13px; font-weight: 700; margin-top: 8px; }
+.empty-state { text-align: center; color: var(--muted); padding: 30px; font-weight: 700; }
+.login-adm { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--brown); padding: 16px; }
+.login-adm .modal { animation: none; }
+.notice { background: var(--yellow-soft); border-left: 5px solid var(--yellow); padding: 12px 14px; border-radius: 10px; font-size: 14px; margin-bottom: 14px; }
+.notice.red { background: #FDECEA; border-color: var(--red); }
+.bar-row { display: grid; grid-template-columns: 130px 1fr 90px; gap: 10px; align-items: center; font-size: 13px; padding: 4px 0; }
+.bar-row .track { background: var(--surface-2); border-radius: 6px; height: 16px; overflow: hidden; }
+.bar-row .fill { height: 100%; border-radius: 6px; }
+@media (max-width: 1000px) {
+  .shell { grid-template-columns: 1fr; }
+  .side { position: static; height: auto; flex-direction: row; flex-wrap: wrap; }
+  .side .grp, .side .foot { display: none; }
+  .cols, .cols-3-2 { grid-template-columns: 1fr; }
+  .content, .bar { padding-left: 16px; padding-right: 16px; }
+}
+@media print { .side, .bar .no-print, .tools { display: none !important; } .shell { display: block; } }

@@ -1,0 +1,18 @@
+{
+  "name": "popollo-tpv",
+  "version": "1.2.0",
+  "description": "TPV y gestión central de POPOLLO (Rustidor Global S.L.)",
+  "main": "server.js",
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --no-warnings server.js",
+    "build": "node -e \"console.log('POPOLLO TPV no necesita compilación')\"",
+    "reset": "node --no-warnings server.js --reset",
+    "test": "node --no-warnings --test test/*.test.js",
+    "backup": "node --no-warnings scripts/backup.js",
+    "zip": "node scripts/zip-hostinger.js"
+  }
+}
